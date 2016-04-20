@@ -1,0 +1,10 @@
+{% extends 'movies/base.html' %}
+
+{% block content %}
+	{% if review %}
+		<div class="review-detail">
+			<h4>{{ review.name }}</h4>
+			<p>{{ review.text }}</p>
+		</div>
+	{% endif %}
+{% endblock %}

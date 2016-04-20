@@ -1,0 +1,23 @@
+{% extends 'movies/base.html' %}
+
+{% block content %}
+	<div class="movie-detail">
+		{% if movie %}
+			<h3>{{ movie.title }}</h3>
+			<h5>{{ movie.rate }}</h5>
+			<p>{{ movie.intro }}</p>
+		{% endif %}
+
+		{% if reviews %}
+			<br><br><br>
+			<h4>Review List</h4>
+			{% for review in reviews %}
+				<div class="review-list">
+					<h5><a href="{% url 'review-detail' review.pk %}">{{ review.text }}</a></h5> 
+					<h6>{{ review.name }}</h6>
+					<br>
+				</div>
+		 	{% endfor %}
+		{% endif %}
+	</div>
+{% endblock %}
